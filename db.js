@@ -16,6 +16,13 @@ db.connect(err => {
 });
 global.db = db;
 
-module.exports = db;
+// db.query('SELECT 1 + 1 AS solution', (err, res, fields) => {
+//   if (err) {
+//     throw err;
+//   }
+//   console.log('solution is :', res[0].solution);
+// });
 
 db.end();
+
+module.exports = db;
