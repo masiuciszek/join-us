@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 require('dotenv').config();
-
+const faker = require('faker')
+;
 const db = mysql.createConnection({
   host: 'localhost',
   user: process.env.DB_USER,
@@ -16,14 +17,21 @@ db.connect(err => {
 });
 // global.db = db;
 
-const q = 'SELECT * FROM users';
-
-db.query(q, (err, res, fields) => {
-  if (err) {
-    throw err;
-  }
+const q = 'INSERT INTO users SET ?';
+const person = { email: faker.internet.email() };
+db.query(q, person, (err, res) => {
+  if (err) throw err;
   console.log(res);
 });
+
+// const q = 'SELECT * FROM users';
+
+// db.query(q, (err, res, fields) => {
+//   if (err) {
+//     throw err;
+//   }
+//   console.log(res);
+// });
 
 // db.query('SELECT 1 + 1 AS solution', (err, res, fields) => {
 //   if (err) {
