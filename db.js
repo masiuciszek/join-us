@@ -14,7 +14,16 @@ db.connect(err => {
   }
   console.log('Connected to database');
 });
-global.db = db;
+// global.db = db;
+
+const q = 'SELECT * FROM users';
+
+db.query(q, (err, res, fields) => {
+  if (err) {
+    throw err;
+  }
+  console.log(res);
+});
 
 // db.query('SELECT 1 + 1 AS solution', (err, res, fields) => {
 //   if (err) {
