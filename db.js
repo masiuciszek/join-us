@@ -18,4 +18,4 @@ global.db = db;
 
 module.exports = db;
 
-// db.end();
+db.end();
