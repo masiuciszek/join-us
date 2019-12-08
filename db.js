@@ -1,9 +1,9 @@
 const mysql = require('mysql');
 require('dotenv').config();
-const faker = require('faker')
-;
+const faker = require('faker');
+
 const db = mysql.createConnection({
-  host: 'localhost',
+  host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB,
@@ -13,13 +13,18 @@ db.connect(err => {
   if (err) {
     throw err;
   }
-  console.log('Connected to database');
+  console.log('Connected to MySQL DB');
 });
+
+const data = [];
+for (let i = 0; i < 500; i += 1) {
+  data.push([[faker.internet.email()]]);
+}
+
 // global.db = db;
 
-const q = 'INSERT INTO users SET ?';
-const person = { email: faker.internet.email() };
-db.query(q, person, (err, res) => {
+const q = 'INSERT INTO users (email) VALUES ?';
+db.query(q, [data], (err, res) => {
   if (err) throw err;
   console.log(res);
 });
@@ -40,6 +45,6 @@ db.query(q, person, (err, res) => {
 //   console.log('solution is :', res[0].solution);
 // });
 
-db.end();
+// db.end();
 
 module.exports = db;
