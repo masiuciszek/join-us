@@ -28,7 +28,7 @@ db.connect(err => {
 //   console.log(result);
 // });
 
-// global.db = db;
+global.db = db;
 
 // db.end();
 
