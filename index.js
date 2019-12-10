@@ -14,4 +14,4 @@ app.use('/api/users', require('./routes/user'));
 
 db.end();
 
-app.listen(port, () => console.log(`port is on ${port}`));
+app.listen(port, () => console.log(`port is on localhost ${port}`));
