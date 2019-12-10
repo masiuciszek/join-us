@@ -2,6 +2,7 @@
 interface DefaultActionsTypes {
   GET_USERS_COUNT: string;
   USER_ERROR: string;
+
 }
 
 

@@ -7,6 +7,8 @@ export default (state: IState, action: IActionType) => {
 
       return {
         ...state,
+        count: payload,
+        loading: false,
       };
 
     default:

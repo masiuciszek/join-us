@@ -9,11 +9,12 @@ interface Props {
 }
 
 const initialState: IState = {
-  count: 0,
+  count: { data: 0 },
+  loading: true,
   getUserCount: () => number,
 };
 
-const userContext = React.createContext<IState>(initialState);
+export const userContext = React.createContext<IState>(initialState);
 
 const UserProvider: React.FC<Props> = ({ children }) => {
   const [state, dispatch] = React.useReducer(userReducer, initialState);
@@ -34,6 +35,7 @@ const UserProvider: React.FC<Props> = ({ children }) => {
   return (
     <userContext.Provider value={{
       count: state.count,
+      loading: state.loading,
       getUserCount,
     }}
     >

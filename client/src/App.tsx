@@ -7,7 +7,11 @@ import UserProvider from './context/user.state';
 const App: React.FC = () => (
   <>
     <UserProvider>
-      <JoinUs />
+      <main>
+        <div className="container">
+          <JoinUs />
+        </div>
+      </main>
     </UserProvider>
   </>
 );
