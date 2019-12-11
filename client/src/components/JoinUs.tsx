@@ -16,10 +16,12 @@ const JoinUs: React.FC<Props> = () => {
 
 
   return (
-    <div>
+    <div className="JoinUs">
       {' '}
-      <WelcomeMsg title="Join" subTitle="us" amount={count.data} />
-      <Form />
+      <div className="wrapper">
+        <WelcomeMsg title="Join" subTitle="us" amount={count.data} />
+        <Form />
+      </div>
       {' '}
     </div>
   );

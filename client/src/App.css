@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.JoinUs {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 3;
+  position: relative;
+  border: 2px solid red;
+}
+
+.wrapper {
+  box-shadow: 1px 3px 3px 2px rgba(0, 0, 0, .4);
+  padding: 1rem 3rem;
+  background: rgba(0, 0, 0, .3);
+}
+
+.Welcome {
+  padding: 2rem;
+  width: 76rem;
+  color: #fefefe;
+
+}
+
+.Welcome .head {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: rgba(0, 0, 0, .7);
+  box-shadow: 1px 3px 3px 2px rgba(0, 0, 0, .4);
+
 }
 
-.App-link {
-  color: #61dafb;
+.Welcome h1 {
+  font-size: 6rem;
+  letter-spacing: .7rem;
+  margin: 0 .3rem;
+  padding: .5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Welcome h3 {
+  font-size: 4rem;
+  letter-spacing: .8rem;
+  margin: 0 .6rem;
+  padding: .5rem;
+}
+
+.Welcome p {
+  font-size: 1.8rem;
+  letter-spacing: .3rem;
+  text-align: center;
+  padding: 3rem;
+}
+
+.form-wrapper {
+
+
+  padding: 2rem;
+  min-width: 70rem;
+  display: flex;
+}
+
+.form-wrapper form {
+
+  padding: 2rem;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form .form-group {
+  padding: 1rem 2.6rem;
+  border: 2px solid green;
+  width: 100%;
+}
+
+.form-group input {
+  width: 100%;
+  padding: .6rem 1rem;
+  font-size: 1.4rem;
+  border: 2px solid #021212;
+  border-radius: 1rem;
+
+}
+
+.form-group button {
+  padding: .6rem .9rem;
+  width: 12rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  transition: all 300ms ease-in-out;
+  background: #333;
+  color: #fff;
+  border: 2px solid #ffd;
+  letter-spacing: .1rem;
+  cursor: pointer;
+  position: relative;
+  margin-left: auto;
+  display: block;
+  border-radius: 1rem;
+}
+
+.form-group button:hover {
+  background: #fff;
+  color: #333;
+  border: 2px solid #333;
+
+}
+
+.form-group button:active {
+  top: 4px;
+
 }
