@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 import * as React from 'react';
@@ -14,7 +15,8 @@ const initialState: IState = {
   loading: true,
   emails: [],
   getUserCount: () => number,
-  postEmail: () => string,
+  postEmail: (email: string) => string,
+
 };
 
 export const userContext = React.createContext<IState>(initialState);
@@ -34,11 +36,11 @@ const UserProvider: React.FC<Props> = ({ children }) => {
     }
   };
 
-  const postEmail = async (formData: string) => {
+  const postEmail = async (email: string) => {
     try {
       const res = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify(email),
         headers: {
           'Content-Type': 'application/json',
         },

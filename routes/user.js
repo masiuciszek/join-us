@@ -12,9 +12,23 @@ router.get('/', (req, res) => {
   });
 });
 
+/**
+ * @param{Object} req
+ * @param{Object} res
+ */
 router.post('/', async (req, res) => {
-  const q = 'INSERT INTO users (email) values(?)';
-  db.query(q, [req.body.email], (err, r) => {
+  // const q = 'INSERT INTO users set ?';
+  // db.query(q, [req.body], (err, r) => {
+  //   if (err) throw err;
+  //   console.log(r);
+  //   res.json(r);
+  // });
+  const person = {
+    email: req.body.email,
+  };
+  // INSERT INTO users (email) values(?)
+
+  db.query('INSERT INTO users SET ?', person, (err, r) => {
     if (err) throw err;
     console.log(r);
     res.json(r);

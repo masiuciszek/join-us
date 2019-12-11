@@ -2,7 +2,9 @@ type IState = {
   count: CountData;
   emails: string[];
   getUserCount: () => void;
-  postEmail: (formData: string) => void;
+  // postEmail: (email: string) => void;
+  postEmail: (email: string) => void;
+  // postEmail: () => any;
   loading: boolean;
 }
 
