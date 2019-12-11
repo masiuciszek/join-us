@@ -12,6 +12,7 @@ interface Props {
 const initialState: IState = {
   count: { data: 0 },
   loading: true,
+  emails: [],
   getUserCount: () => number,
   postEmail: () => string,
 };
@@ -36,7 +37,7 @@ const UserProvider: React.FC<Props> = ({ children }) => {
   const postEmail = async (formData: string) => {
     try {
       const res = await fetch('/api/users', {
-        method: 'post',
+        method: 'POST',
         body: JSON.stringify(formData),
         headers: {
           'Content-Type': 'application/json',
@@ -59,6 +60,7 @@ const UserProvider: React.FC<Props> = ({ children }) => {
     <userContext.Provider value={{
       count: state.count,
       loading: state.loading,
+      emails: state.emails,
       getUserCount,
       postEmail,
     }}
