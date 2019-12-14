@@ -34,6 +34,17 @@ router.post('/', async (req, res) => {
     res.json(r);
   });
 });
-// db.end();
 
+router.get('/amount', (req, res) => {
+  const { count } = req.query;
+  db.query(
+    `SELECT email FROM users ORDER BY created_at DESC LIMIT ${count}`,
+    (err, responses) => {
+      if (err) throw err;
+      res.json(responses);
+    }
+  );
+});
+
+// db.end();
 module.exports = router;
