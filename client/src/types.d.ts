@@ -1,9 +1,12 @@
 type IState = {
   count: CountData;
-  emails: string[];
+  emails: Email[];
   getUserCount: () => void;
   postEmail: (email: string) => void;
   loading: boolean;
+  // getEmails: () => void;
+  // getEmails: any;
+  getEmails: () => void;
 }
 
 type IActionType = {
@@ -13,4 +16,8 @@ type IActionType = {
 
 type CountData = {
   data: number;
+}
+
+type Email = {
+  email: string;
 }

@@ -16,6 +16,7 @@ const initialState: IState = {
   emails: [],
   getUserCount: () => number,
   postEmail: (email: string) => string,
+  getEmails: () => string,
 };
 
 export const userContext = React.createContext<IState>(initialState);
@@ -57,6 +58,20 @@ const UserProvider: React.FC<Props> = ({ children }) => {
   };
 
 
+  const getEmails = async () => {
+    try {
+      const res = await fetch('api/users/amount?count=6');
+      // const res = await fetch(`api/users/amount?count=${n}`);
+      const data = await res.json();
+
+      dispatch({ type: contextActions.GET_EMAILS, payload: data });
+    } catch (err) {
+      dispatch({
+        type: contextActions.USER_ERROR, payload: err.message,
+      });
+    }
+  };
+
   return (
     <userContext.Provider value={{
       count: state.count,
@@ -64,6 +79,7 @@ const UserProvider: React.FC<Props> = ({ children }) => {
       emails: state.emails,
       getUserCount,
       postEmail,
+      getEmails,
     }}
     >
 

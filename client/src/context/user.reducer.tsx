@@ -15,6 +15,12 @@ export default (state: IState, action: IActionType) => {
         emails: [...state.emails, payload],
         loading: false,
       };
+    case contextActions.GET_EMAILS:
+      return {
+        ...state,
+        emails: payload,
+        loading: false,
+      };
     default:
       return state;
   }

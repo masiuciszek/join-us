@@ -1,0 +1,50 @@
+.EmailList {
+
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+}
+
+.emails {
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 2px 2px 1px rgba(3, 3, 3, 0.6);
+  min-width: 60em;
+  min-height: 40em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.emails h1 {
+  font-size: 3em;
+  padding: .9em 0;
+}
+
+.styledEmail {
+  font-size: 1.8em;
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-bottom: 1px solid #333;
+  letter-spacing: .1em;
+}
+
+.back {
+  padding: .3em 1em;
+  display: block;
+  background: none;
+  border-bottom: 3px solid #333;
+  font-size: 1.9em;
+  text-transform: uppercase;
+  color: #333;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  z-index: 3;
+}

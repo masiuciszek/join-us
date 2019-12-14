@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import WelcomeMsg from './WelcomeMsg';
 import Form from './Form';
 import { userContext } from '../context/user.state';
@@ -21,6 +22,12 @@ const JoinUs: React.FC<Props> = () => {
       <div className="wrapper">
         <WelcomeMsg title="Join" subTitle="us" amount={count.data} />
         <Form />
+        <Link to="/emails">
+          <span className="back" style={{ color: '#fff', borderBottom: 'none' }}>
+        Email list
+          </span>
+
+        </Link>
       </div>
       {' '}
     </div>
