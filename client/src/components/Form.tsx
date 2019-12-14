@@ -7,7 +7,7 @@ interface Props {
 
 const Form: React.FC<Props> = () => {
   const { postEmail } = React.useContext(userContext);
-  const [email, setEmail] = React.useState({
+  const [email, setEmail] = React.useState<{email: string}>({
     email: '',
 
   });

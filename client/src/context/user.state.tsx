@@ -16,7 +16,6 @@ const initialState: IState = {
   emails: [],
   getUserCount: () => number,
   postEmail: (email: string) => string,
-
 };
 
 export const userContext = React.createContext<IState>(initialState);
@@ -40,10 +39,10 @@ const UserProvider: React.FC<Props> = ({ children }) => {
     try {
       const res = await fetch('/api/users', {
         method: 'POST',
-        body: JSON.stringify(email),
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify({ email }),
       });
       const data = await res.json();
       dispatch({

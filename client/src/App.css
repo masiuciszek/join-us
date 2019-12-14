@@ -6,7 +6,7 @@
   height: 100vh;
   z-index: 3;
   position: relative;
-  border: 2px solid red;
+
 }
 
 .wrapper {
@@ -70,6 +70,16 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
+
+
+
+  line-height: 1.5;
+  border: none;
+  border-bottom: 3px solid #ebebeb;
+  margin-top: 100px;
+  width: 700px;
+  color: white;
+  background: transparent;
 }
 
 form .form-group {
@@ -90,8 +100,17 @@ form .form-group {
   background: none;
   border: none;
   position: relative;
-  border-bottom: 2px solid #fff;
   color: #fff;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgba(255, 255, 255, 0.8);
 }
 
 ::placeholder {
@@ -102,27 +121,29 @@ form .form-group {
 
 
 .form-group button {
-  padding: .6rem .9rem;
-  width: 12rem;
-  font-size: 1.3rem;
   text-transform: uppercase;
   transition: all 300ms ease-in-out;
-  background: #333;
-  color: #fff;
-  border: 2px solid #ffd;
   letter-spacing: .1rem;
   cursor: pointer;
   position: relative;
   margin-left: auto;
   display: block;
-  border-radius: 1rem;
+  line-height: 2.0;
+  border: none;
+  border: 3px solid white;
+  font-size: 1.9em;
+  color: rgb(66, 69, 86);
+  padding: 5px 30px;
+  background: rgba(255, 255, 255, 1.0);
+  border-radius: 5px;
+  opacity: 0.8;
 }
 
 .form-group button:hover {
   background: #fff;
   color: #333;
   border: 2px solid #333;
-
+  opacity: 1;
 }
 
 .form-group button:active {
